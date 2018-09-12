@@ -2,9 +2,9 @@
    /*
    Plugin Name: Menú acordeón
    Text Domain: menu-acordeon
-   Plugin URI:
+   Plugin URI: https://github.com/aitormendez/menu-acordeon
    Description: Plugin de WordPress. Detecta qué items de menú son taxonomías y
-   añade todas los post correspondientes a esa cotegoría como un submenú.
+   añade todos los post correspondientes a esa categoría como un submenú.
    Version: 1.0
    Author: Aitor Méndez
    Author URI: https://e451.net
