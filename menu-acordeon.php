@@ -14,7 +14,7 @@
 <?php
 class ep_submenu extends Walker_Nav_Menu {
 
-    function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+    public function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
         if( 'taxonomy' == $item->type ) {
             $output .= '<li><a class="toggle" href="javascript:void(0);">' . $item->title . '</a>';
         } else {
@@ -32,7 +32,7 @@ class ep_submenu extends Walker_Nav_Menu {
         }
     }
 
-    function end_el(&$output, $item, $depth=0, $args=[]) {
+    public function end_el(&$output, $item, $depth=0, $args=[]) {
         if( 'taxonomy' == $item->type ) {
             $posts_args = [
                 'nopaging'    => true,
