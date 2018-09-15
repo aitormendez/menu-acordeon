@@ -17,7 +17,7 @@ class ep_submenu extends Walker_Nav_Menu {
     function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
         $clases_arr = $item->classes;
         $clases ='';
-        foreach ($clases_arr as $key => $clase) {
+        foreach ($clases_arr as $clase) {
             $clases .= $clase . ' ';
         }
 
