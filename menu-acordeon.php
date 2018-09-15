@@ -15,14 +15,20 @@
 class ep_submenu extends Walker_Nav_Menu {
 
     function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+        $clases_arr = $item->classes;
+        $clases ='';
+        foreach ($clases_arr as $key => $clase) {
+            $clases .= $clase . ' ';
+        }
+
         if( 'taxonomy' == $item->type ) {
             $tax_slug = basename($item->url);
-            $output .= '<li><a class="toggle ' . $tax_slug . '" href="javascript:void(0);">' . $item->title . '</a>';
+            $output .= '<li class="' . $clases . '"><a id="' . $tax_slug .'" class="toggle" href="javascript:void(0);">' . $item->title . '</a>';
         } else {
             if( $item->url && $item->url != '#' ) {
-                  $output .= '<li><a href="' . $item->url . '">';
+                  $output .= '<li class="' . $clases . '"><a href="' . $item->url . '">';
                 } else {
-                  $output .= '<li>';
+                  $output .= '<li class="' . $clases . '">';
                 }
             $output .= $item->title;
             if( $item->url && $item->url != '#' ) {
@@ -53,5 +59,6 @@ class ep_submenu extends Walker_Nav_Menu {
             }
         }
         $output .= "</li>\n";
+        // var_dump($item);
     }
 }
