@@ -22,15 +22,15 @@ class ep_submenu extends Walker_Nav_Menu {
         }
 
         if( 'taxonomy' == $item->type ) {
-            $tax_slug = basename($item->url);
-            $output .= '<li class="' . $clases . '"><a id="' . $tax_slug .'" class="toggle" href="javascript:void(0);">' . $item->title . '</a>';
+            $tax_slug = basename(esc_url($item->url));
+            $output .= '<li class="' . $clases . '"><a id="' . $tax_slug .'" class="toggle" href="javascript:void(0);">' . sanitize_title($item->title) . '</a>';
         } else {
             if( $item->url && $item->url != '#' ) {
-                  $output .= '<li class="' . $clases . '"><a href="' . $item->url . '">';
+                  $output .= '<li class="' . $clases . '"><a href="' . esc_url($item->url) . '">';
                 } else {
                   $output .= '<li class="' . $clases . '">';
                 }
-            $output .= $item->title;
+            $output .= sanitize_title($item->title);
             if( $item->url && $item->url != '#' ) {
                   $output .= '</a></li>';
                 } else {
